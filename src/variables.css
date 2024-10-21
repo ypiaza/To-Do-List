@@ -1,0 +1,13 @@
+:root{
+    --bg-color-full: #eeeeee;
+    --bg-color: #fff;
+    --bg-color-dark: #242424;
+    --bg-header: #3075ce;
+    --color-text: #fff;
+    --color-text-dark: #242424;
+    --bg-button: #3075ce;
+    --bg-task: #3075ce;
+    --bg-task-complete: rgb(48, 206, 119);
+    --bg-task-delete: rgba(36, 36, 36, 0.5);
+    --bg-task-delete-red: #e43838;
+}

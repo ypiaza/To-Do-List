@@ -1,0 +1,9 @@
+.inputReject{
+    background-color: var(--bg-task-delete-red);
+    box-shadow: 0 0 15px var(--bg-task-delete-red);
+    border: none;
+    outline: none;
+    &.inputReject::placeholder{
+        color: rgba(250, 250, 250, 0.5);
+    }
+}
