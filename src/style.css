@@ -68,6 +68,7 @@ header {
         width: 100vw;
         padding: 0 5rem;
         overflow-y: scroll;
+        position: relative;
     }
 
     & div>ul {
@@ -92,23 +93,21 @@ header {
             border: 1px solid rgba(0, 0, 0, 0.1);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             cursor: pointer;
-            animation: pulsar 10s linear infinite;
             transition: all 0.5s;
-            & button {
-                background-color: var(--bg-task-delete);
-                border-radius: 10px;
+            & .btnArea{
                 width: 100%;
-                border: none;
-                padding: 0.25rem 6rem;
-                color: var(--color-text);
-                cursor: pointer;
-            }
-        }
+                display: flex;
+                justify-content: center;
 
-        & li:hover {
-            background-color: var(--bg-task-complete);
-            color: var(--color-text);
-            animation: none;
+                & button {
+                    background-color: var(--bg-task-delete);
+                    border-radius: 10px;
+                    border: none;
+                    padding: 0.25rem 1rem;
+                    color: var(--color-text);
+                    cursor: pointer;
+                }
+            }
         }
     }
     @media (max-width: 950px) {
