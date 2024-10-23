@@ -26,16 +26,25 @@ function addTarefa(event) {
 
         btnDelete.addEventListener('click', () => {
             tarefa.remove(tarefa);
-            const alertDel = document.createElement('div')
-            
+            const alertDel = document.querySelector('.alertDel');
+            const progress = document.querySelector('.progress')
+            alertDel.style.display = 'flex'
+            progress.style.width = '100%'
+            setTimeout(() => {
+                alertDel.style.display = 'none'
+                progress.style.width = ''
+            }, 700);
         })
 
-        tarefa.addEventListener('click', (event) => {
-            if (event.target !== btnDelete && event.target.tagName === 'LI'
-            ) {
-                tarefa.remove(tarefa)
-            }
-        });
+        btnCheck.addEventListener('click', () => {
+            tarefa.remove(tarefa);
+            const alertCheck = document.querySelector('.alertCheck');
+            alertCheck.style.display = 'flex'
+            setTimeout(() => {
+                alertCheck.style.display = 'none'
+            }, 700);
+        })
+
 
         inputTarefa.classList.remove('inputReject')
     } else {

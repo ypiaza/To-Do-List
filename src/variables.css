@@ -8,6 +8,8 @@
     --bg-button: #3075ce;
     --bg-task: #3075ce;
     --bg-task-complete: rgb(48, 206, 119);
+    --bg-task-complete-blur: rgba(48, 206, 119, 0.5);
     --bg-task-delete: rgba(36, 36, 36, 0.5);
     --bg-task-delete-red: #e43838;
+    --bg-task-delete-red-blur: rgba(228, 56, 56, 0.5);
 }

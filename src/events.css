@@ -13,15 +13,41 @@
     background-color: var(--bg-task-delete-red);
 }
 
-div > .alertDel{
-    display: flex;
+div > .alertDel {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 50%;
+    left: 50%;
+    bottom: 2.5rem; 
+    transform: translateX(-50%);
+    border: 1px solid var(--bg-task-delete-red-blur);
+    position: absolute;
+    background-color: var(--bg-task-delete-red-blur);
+    backdrop-filter: blur(10px);
+    & span{
+        height: 0.25rem;
+        width: 1%;
+        background-color: var(--bg-task-delete-red);
+        transition: all 0.5s;
+    }
+}
+
+div > .alertCheck {
+    display: none;
     align-items: center;
     justify-content: center;
     padding: 1rem;
     border-radius: 8px;
-    width: 100%;
-    left: 0;
-    bottom: 2.5rem;
-    border: 1px solid red;
+    width: 50%;
+    left: 50%;
+    bottom: 2.5rem; 
+    transform: translateX(-50%);
+    border: 1px solid var(--bg-task-complete-blur);
     position: absolute;
+    background-color: var(--bg-task-complete-blur);
+    backdrop-filter: blur(10px);
 }
