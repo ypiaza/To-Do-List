@@ -22,7 +22,7 @@ div>.alertDel {
     flex-direction: column;
     padding: 1rem;
     border-radius: 8px;
-    width: 30%;
+    width: 20rem;
     left: 50%;
     bottom: 2.5rem;
     transform: translateX(-50%);
@@ -36,6 +36,7 @@ div>.alertDel {
         display: flex;
         justify-content: space-evenly;
         width: 100%;
+
         & button {
             background-color: var(--bg-task-delete);
             border-radius: 10px;
@@ -64,7 +65,7 @@ div>.alertCheck {
     flex-direction: column;
     padding: 1rem;
     border-radius: 8px;
-    width: 30%;
+    width: 20rem;
     left: 50%;
     bottom: 2.5rem;
     transform: translateX(-50%);
@@ -79,6 +80,16 @@ div>.alertCheck {
         width: 0;
         background-color: var(--bg-task-complete);
         border-radius: 100px;
-        transition: width 3s ease;
+        transition: width 1s ease;
     }
+}
+
+
+.btnEdit {
+    background-color: var(--bg-task-delete);
+    border-radius: 10px;
+    border: none;
+    padding: 0.25rem 1rem;
+    color: var(--color-text);
+    cursor: pointer;
 }
