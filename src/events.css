@@ -1,53 +1,84 @@
-.inputReject{
+.inputReject {
     background-color: var(--bg-task-delete-red);
     box-shadow: 0 0 15px var(--bg-task-delete-red);
     border: none;
     outline: none;
-    &.inputReject::placeholder{
+
+    &.inputReject::placeholder {
         color: rgba(250, 250, 250, 0.5);
     }
 }
 
 
-.btnDelete{
+.btnDelete {
     background-color: var(--bg-task-delete-red);
 }
 
-div > .alertDel {
+div>.alertDel {
+    display: none;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 30%;
+    left: 50%;
+    bottom: 2.5rem;
+    transform: translateX(-50%);
+    border: 1px solid var(--bg-task-delete-red-blur);
+    position: absolute;
+    color: var(--color-text);
+    background-color: var(--bg-task-delete-red-blur);
+    backdrop-filter: blur(10px);
+
+    & div {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        & button {
+            background-color: var(--bg-task-delete);
+            border-radius: 10px;
+            font-size: 0.75rem;
+            border: none;
+            padding: 0.15rem 0.1rem;
+            color: var(--color-text);
+            cursor: pointer;
+        }
+    }
+
+    & span {
+        display: block;
+        height: 5px;
+        width: 0;
+        background-color: var(--bg-task-delete-red);
+        border-radius: 100px;
+        transition: width 5s ease;
+    }
+}
+
+div>.alertCheck {
     display: none;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     padding: 1rem;
     border-radius: 8px;
-    width: 50%;
+    width: 30%;
     left: 50%;
-    bottom: 2.5rem; 
-    transform: translateX(-50%);
-    border: 1px solid var(--bg-task-delete-red-blur);
-    position: absolute;
-    background-color: var(--bg-task-delete-red-blur);
-    backdrop-filter: blur(10px);
-    & span{
-        height: 0.25rem;
-        width: 1%;
-        background-color: var(--bg-task-delete-red);
-        transition: all 0.5s;
-    }
-}
-
-div > .alertCheck {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    border-radius: 8px;
-    width: 50%;
-    left: 50%;
-    bottom: 2.5rem; 
+    bottom: 2.5rem;
     transform: translateX(-50%);
     border: 1px solid var(--bg-task-complete-blur);
     position: absolute;
     background-color: var(--bg-task-complete-blur);
     backdrop-filter: blur(10px);
+
+    & span {
+        display: block;
+        height: 5px;
+        width: 0;
+        background-color: var(--bg-task-complete);
+        border-radius: 100px;
+        transition: width 3s ease;
+    }
 }

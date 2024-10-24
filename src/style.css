@@ -54,7 +54,7 @@ header {
         cursor: pointer;
         background-color: var(--bg-color-dark);
         color: var(--color-text);
-        box-shadow: 0 0 5px var(--bg-task-delete);
+        box-shadow: 1px 2px 5px var(--bg-task-delete);
         opacity: 0.9;
         transition: ease-in-out 0.2s;
     }

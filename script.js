@@ -27,22 +27,42 @@ function addTarefa(event) {
         btnDelete.addEventListener('click', () => {
             tarefa.remove(tarefa);
             const alertDel = document.querySelector('.alertDel');
-            const progress = document.querySelector('.progress')
+            const progress = document.querySelector('.progressDel');
+            const btnRevert = document.getElementById('revert');
+
+            btnRevert.addEventListener('click', () => {
+                listaTarefas.appendChild(tarefa);
+
+                clearTimeout(timeoutProgress); // Cancela o timeout do progresso
+                clearTimeout(timeoutHide); // Cancela o timeout de esconder o alerta
+                alertDel.style.display = 'none';
+                progress.style.width = '';
+            })
+
             alertDel.style.display = 'flex'
-            progress.style.width = '100%'
-            setTimeout(() => {
+            
+            timeoutProgress = setTimeout(() => {
+                progress.style.width = '100%'
+            }, 100)
+            
+            timeoutHide = setTimeout(() => {
                 alertDel.style.display = 'none'
                 progress.style.width = ''
-            }, 700);
+            }, 5000);
         })
 
         btnCheck.addEventListener('click', () => {
             tarefa.remove(tarefa);
             const alertCheck = document.querySelector('.alertCheck');
+            const progress = document.querySelector('.progressCheck');
             alertCheck.style.display = 'flex'
             setTimeout(() => {
+                progress.style.width = '100%'
+            }, 100)
+            setTimeout(() => {
                 alertCheck.style.display = 'none'
-            }, 700);
+                progress.style.width = ''
+            }, 3000);
         })
 
 
@@ -56,8 +76,8 @@ function addTarefa(event) {
 }
 
 btnAddTarefa.addEventListener('click', addTarefa)
-inputTarefa.addEventListener('keydown', (event)=>{
-    if(event.key === 'Enter'){
+inputTarefa.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
         addTarefa();
         event.preventDefault();
     }

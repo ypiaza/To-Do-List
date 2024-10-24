@@ -22,17 +22,20 @@
     <main id="body">
         <div>
                 <input type="text" id="tarefa" placeholder="O que tem para hoje?">
-            <button id="btn-add-tarefa">Add</button>
+            <button id="btn-add-tarefa">+</button>
         </div>
         <div>
             <ul id="listaTarefas"></ul>
             <span class="alertDel">
-                <p>Tarefa Excluída!</p>
-                <span class="progress"></span>
+                <div>
+                    <p>Excluíndo. . .</p>
+                    <button id="revert">Cancelar ação</button>
+                </div>
+                <span class="progressDel"></span>
             </span>
             <span class="alertCheck">
                 <p>Tarefa Concluída!</p>
-                <span class="progress"></span>
+                <span class="progressCheck"></span>
             </span>
         </div>
 
