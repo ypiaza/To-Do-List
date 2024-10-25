@@ -14,46 +14,48 @@ function addTarefa(event) {
         const btnDelete = document.createElement('button');
         const btnCheck = document.createElement('button');
         const btnEdit = document.createElement('button');
+        const btnPriority = document.createElement('button');
         btnDelete.innerHTML = '<i class="fa-solid fa-trash"></i>';
         btnCheck.innerHTML = '<i class="fa-solid fa-check"></i>'
         btnEdit.innerHTML = '<i class="fa-solid fa-pen"></i>'
+        btnPriority.innerHTML = '<i class="fa-solid fa-exclamation"></i>'
         tarefa.innerText = tarefaEscrita;
         btnArea.classList.add('btnArea')
         listaTarefas.appendChild(tarefa);
         tarefa.appendChild(btnArea);
+        btnArea.appendChild(btnPriority)
         btnArea.appendChild(btnEdit);
         btnArea.appendChild(btnDelete);
         btnArea.appendChild(btnCheck);
         tarefaEscrita.value = '';
 
 
-        btnDelete.addEventListener('click', (event) => {
+        btnDelete.addEventListener('click', () => {
             tarefa.remove(tarefa);
             const alertDel = document.querySelector('.alertDel');
             const progress = document.querySelector('.progressDel');
             const btnRevert = document.getElementById('revert');
 
-            btnRevert.addEventListener('click', () => {
+            btnRevert.addEventListener('click', (event) => {
                 listaTarefas.appendChild(tarefa);
 
                 clearTimeout(timeoutProgress); // Cancela o timeout do progresso
                 clearTimeout(timeoutHide); // Cancela o timeout de esconder o alerta
                 alertDel.style.display = 'none';
                 progress.style.width = '';
+                event.preventDefault();
             })
 
             alertDel.style.display = 'flex'
-            
+
             timeoutProgress = setTimeout(() => {
                 progress.style.width = '100%'
             }, 100)
-            
+
             timeoutHide = setTimeout(() => {
                 alertDel.style.display = 'none'
                 progress.style.width = ''
             }, 3000);
-
-            event.preventDefault();
 
         })
 
@@ -81,9 +83,8 @@ function addTarefa(event) {
             btnSubmmitEdit.classList.add('btnEdit')
             tarefa.appendChild(inputEdit)
             tarefa.appendChild(btnSubmmitEdit)
-            
-            
-            function submitEdit(){
+
+            function submitEdit() {
                 let tarefaEditada = inputEdit.value
                 console.log(tarefaEditada)
                 tarefaEscrita = tarefaEditada;
@@ -102,6 +103,26 @@ function addTarefa(event) {
                     event.preventDefault();
                 }
             });
+
+        })
+
+
+        btnPriority.addEventListener('click', () => {
+            const btnEase = document.createElement('button')
+            const btnMedium = document.createElement('button')
+            const btnHard = document.createElement('button')
+            const btnAreaPriority = document.createElement('div')
+            btnEase.innerHTML = '<i class="fa-solid fa-face-smile"></i>'
+            btnMedium.innerHTML = '<i class="fa-solid fa-face-meh-blank"></i>'
+            btnHard.innerHTML = '<i class="fa-solid fa-face-flushed"></i>'
+            btnAreaPriority.classList.add('btnAreaPriority')
+            btnAreaPriority.appendChild(btnEase)
+            btnAreaPriority.appendChild(btnMedium)
+            btnAreaPriority.appendChild(btnHard)
+            tarefa.appendChild(btnAreaPriority)
+
+
+            //Adicionar ações dos botoes de prioridade
             
         })
 
