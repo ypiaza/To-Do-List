@@ -86,7 +86,7 @@ function addTarefa(event) {
 
             function submitEdit() {
                 let tarefaEditada = inputEdit.value
-                console.log(tarefaEditada)
+              
                 tarefaEscrita = tarefaEditada;
 
                 inputEdit.value = ''
@@ -94,12 +94,14 @@ function addTarefa(event) {
                 tarefa.innerText = tarefaEditada;
                 tarefa.appendChild(btnArea);
             }
-            btnSubmmitEdit.addEventListener('click', submitEdit);
+
+
+            btnSubmmitEdit.addEventListener('click', submmitEdit);
 
 
             inputEdit.addEventListener('keydown', (event) => {
                 if (event.key === 'Enter') {
-                    submitEdit();
+                    submmitEdit();
                     event.preventDefault();
                 }
             });
