@@ -85,7 +85,7 @@ function addTarefa(event) {
             
             function submitEdit(){
                 let tarefaEditada = inputEdit.value
-                console.log(tarefaEditada)
+              
                 tarefaEscrita = tarefaEditada;
 
                 inputEdit.value = ''
