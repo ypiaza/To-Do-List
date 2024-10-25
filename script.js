@@ -40,6 +40,8 @@ function addTarefa(event) {
                 clearTimeout(timeoutHide); // Cancela o timeout de esconder o alerta
                 alertDel.style.display = 'none';
                 progress.style.width = '';
+
+                event.preventDefault();
             })
 
             alertDel.style.display = 'flex'
@@ -53,7 +55,7 @@ function addTarefa(event) {
                 progress.style.width = ''
             }, 3000);
 
-            event.preventDefault();
+            
 
         })
 
