@@ -126,24 +126,21 @@ function addTarefa(event) {
 
             btnEase.addEventListener('click', () => {
 
-                tarefa.style.backgroundColor = 'var(--btn-ease)'
-                tarefa.style.color = 'var(--color-text)'
+                tarefa.style.backgroundColor = 'var(--btn-ease)';
 
                 tarefa.removeChild(btnAreaPriority)
             })
 
             btnMedium.addEventListener('click', () => {
 
-                tarefa.style.backgroundColor = 'var(--btn-medium)'
-                tarefa.style.color = 'var(--color-text)'
+                tarefa.style.backgroundColor = 'var(--btn-medium)';
 
                 tarefa.removeChild(btnAreaPriority)
             })
 
             btnHard.addEventListener('click', () => {
 
-                tarefa.style.backgroundColor = 'var(--btn-hard)'
-                tarefa.style.color = 'var(--color-text)'
+                tarefa.style.backgroundColor = 'var(--btn-hard)';
 
                 tarefa.removeChild(btnAreaPriority)
             })
