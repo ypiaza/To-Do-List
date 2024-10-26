@@ -10,7 +10,7 @@ function addTarefa(event) {
 
     if (tarefaEscrita) {
         const tarefa = document.createElement('li');
-        const btnArea = document.createElement('div')
+        const btnArea = document.createElement('div');
         const btnDelete = document.createElement('button');
         const btnCheck = document.createElement('button');
         const btnEdit = document.createElement('button');
