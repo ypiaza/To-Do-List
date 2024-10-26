@@ -128,7 +128,7 @@ header {
                     background-color: var(--bg-task-delete);
                     border-radius: 10px;
                     border: none;
-                    width: 2rem;
+                    width: 3rem;
                     padding: 0.15rem;
                     color: var(--color-text);
                     cursor: pointer;
@@ -163,4 +163,6 @@ footer {
         color: var(--color-text);
     }
 }
+
+
 

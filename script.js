@@ -84,9 +84,9 @@ function addTarefa(event) {
             tarefa.appendChild(inputEdit)
             tarefa.appendChild(btnSubmmitEdit)
 
-            function submitEdit() {
+            function submmitEdit() {
                 let tarefaEditada = inputEdit.value
-              
+
                 tarefaEscrita = tarefaEditada;
 
                 inputEdit.value = ''
@@ -124,8 +124,30 @@ function addTarefa(event) {
             tarefa.appendChild(btnAreaPriority)
 
 
-            //Adicionar ações dos botoes de prioridade
-            
+            btnEase.addEventListener('click', () => {
+
+                tarefa.style.backgroundColor = 'var(--btn-ease)'
+                tarefa.style.color = 'var(--color-text)'
+
+                tarefa.removeChild(btnAreaPriority)
+            })
+
+            btnMedium.addEventListener('click', () => {
+
+                tarefa.style.backgroundColor = 'var(--btn-medium)'
+                tarefa.style.color = 'var(--color-text)'
+
+                tarefa.removeChild(btnAreaPriority)
+            })
+
+            btnHard.addEventListener('click', () => {
+
+                tarefa.style.backgroundColor = 'var(--btn-hard)'
+                tarefa.style.color = 'var(--color-text)'
+
+                tarefa.removeChild(btnAreaPriority)
+            })
+
         })
 
 
@@ -148,3 +170,49 @@ inputTarefa.addEventListener('keydown', (event) => {
     }
 })
 
+
+// Função para salvar as tarefas no localStorage
+function salvarTarefas() {
+    const tarefas = Array.from(listaTarefas.children).map(tarefa => ({
+        texto: tarefa.childNodes[0].nodeValue.trim(),
+        prioridade: tarefa.style.backgroundColor || null
+    }));
+    localStorage.setItem('tarefas', JSON.stringify(tarefas));
+}
+
+// Função para carregar tarefas do localStorage
+function carregarTarefas() {
+    const tarefas = JSON.parse(localStorage.getItem('tarefas') || '[]');
+    tarefas.forEach(tarefaData => {
+        adicionarTarefaLocalStorage(tarefaData.texto, tarefaData.prioridade);
+    });
+}
+
+// Função para adicionar uma tarefa do localStorage no DOM
+function adicionarTarefaLocalStorage(texto, prioridade = null) {
+    inputTarefa.value = texto;
+    addTarefa(); // Chama sua função original para adicionar a tarefa ao DOM
+    listaTarefas.lastChild.style.backgroundColor = prioridade; // Define a prioridade da tarefa
+}
+
+// Chamada para carregar as tarefas ao iniciar
+document.addEventListener('DOMContentLoaded', carregarTarefas);
+
+// Atualiza o localStorage ao adicionar, excluir, editar, ou modificar prioridade
+btnAddTarefa.addEventListener('click', () => {
+    addTarefa();
+    salvarTarefas(); // Salva as tarefas sempre que uma nova é adicionada
+});
+
+listaTarefas.addEventListener('click', (event) => {
+    if (event.target.closest('button')) {
+        salvarTarefas(); // Salva as tarefas ao clicar em qualquer botão que possa alterar a lista
+    }
+});
+
+inputTarefa.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        addTarefa();
+        salvarTarefas(); // Salva as tarefas ao adicionar via Enter
+    }
+});

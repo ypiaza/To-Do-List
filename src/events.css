@@ -94,3 +94,16 @@ div>.alertCheck {
     cursor: pointer;
 }
 
+
+.ease{
+    background-color: var(--btn-easy);
+}
+
+.medium{
+    background-color: var(--btn-medium);
+}
+
+.hard{
+    background-color: var(--btn-hard);
+}
+

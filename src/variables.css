@@ -12,4 +12,7 @@
     --bg-task-delete: rgba(36, 36, 36, 0.5);
     --bg-task-delete-red: #e43838;
     --bg-task-delete-red-blur: rgba(228, 56, 56, 0.5);
+    --btn-ease: #4dfd9f;
+    --btn-medium: #f1fd4d;
+    --btn-hard: #fd4d4d;
 }
