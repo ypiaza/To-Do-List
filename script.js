@@ -150,7 +150,7 @@ function addTarefa(event) {
 
         inputTarefa.classList.remove('inputReject')
     } else {
-        inputTarefa.classList.add('inputReject')
+        inputTarefa.classList.add('')
 
     }
 
