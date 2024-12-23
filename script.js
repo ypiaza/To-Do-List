@@ -1,5 +1,3 @@
-//Logica para adicionar e remover tasks assim que concluida ou excluida
-
 const btnAddTarefa = document.getElementById('btn-add-tarefa');
 const inputTarefa = document.getElementById('tarefa');
 const listaTarefas = document.getElementById('listaTarefas');
